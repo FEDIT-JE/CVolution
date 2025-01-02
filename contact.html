@@ -58,14 +58,14 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a class="nav-link" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">Angebot</a>
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.html">Über<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="service.html">Angebot<span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Über</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="team.html">Team</a>
@@ -89,53 +89,47 @@
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container  ">
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Über <span>Uns</span>
+          Kontaktformular
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/slider-3.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h3>
-              Wir sind CVolution
-            </h3>
-            <p>
-              Willkommen bei CVolution – Ihrem Experten für professionelle Bewerbungen und Karriereentwicklung. Mit über 10 Jahren Erfahrung in der Rekrutierung und im HR wissen wir genau, worauf es ankommt, um bei potenziellen Arbeitgebern zu überzeugen. Wir haben mehr als 10'000 Lebensläufe gesichtet und kennen die Kriterien, die den Unterschied machen.
-            </p>
-            <p>
-              Unser Name, CVolution, steht für die Entwicklung Ihrer Bewerbung. Jede Karriere ist einzigartig, und wir gestalten Bewerbungsunterlagen, die Ihre Persönlichkeit und Stärken perfekt widerspiegeln. Unser Ziel ist es, Ihnen nicht nur den nächsten Karriereschritt zu erleichtern, sondern langfristig Ihre beruflichen Chancen zu verbessern.
-            </p>
-            <p>
-              Unser Angebot umfasst die Erstellung professioneller Lebensläufe, individuell abgestimmter Motivationsschreiben und moderner Videobewerbungen. Darüber hinaus bieten wir Laufbahnberatungen und Unterstützung bei den Anforderungen des RAV an. Bei uns erhalten Sie massgeschneiderte Lösungen, die sich an Ihren persönlichen Zielen orientieren
-            </p>
-            <p>
-              Wir legen grossen Wert auf Präzision, Kreativität und Individualität, damit Ihre Bewerbung auffällt und überzeugt. Mit unserer langjährigen Erfahrung und Expertise sind wir der ideale Partner für Ihren beruflichen Erfolg.
-            </p>
-            <p>
-              Vertrauen Sie auf CVolution – weil unsere Bewerbung Ihre berufliche Entwicklung vorantreibt.
-            </p>
-          </div>
+        <div class="col-md-8 mx-auto">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+              <input type="text" class="form-control" id="subject" name="subject" readonly>
+            </div>
+            <div class="form-group">
+              <label for="message">Nachricht</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" style="background-color: #1f4878; border: none;" onclick="sendEmail()">Senden</button>
+            </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- end about section -->
+  <!-- end contact section -->
 
   <!-- info section -->
+
   <section class="info_section layout_padding2">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-lg-3 info_col">
+        <div class="col-md-6 col-lg-3 info_col">
           <div class="info_contact">
             <h4>
               Adresse
@@ -176,7 +170,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4 col-lg-3 info_col">
+        <div class="col-md-6 col-lg-3 info_col">
           <div class="info_detail">
             <h4>
               Info
@@ -186,7 +180,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-4 col-lg-2 mx-auto info_col">
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
           <div class="info_link_box">
             <h4>
               Links
@@ -206,6 +200,17 @@
               </a>
             </div>
           </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -241,6 +246,17 @@
   </script>
   <!-- End Google Map -->
 
+  <script>
+    // Set the subject field based on the modal title
+    document.addEventListener("DOMContentLoaded", function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var subject = urlParams.get('subject');
+      if (subject) {
+        document.getElementById('subject').value = subject;
+      }
+    });
+
+  </script>
 </body>
 
 </html>
