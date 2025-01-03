@@ -61,8 +61,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="index.html">Home</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="service.html">Angebot<span class="sr-only">(current)</span> </a>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Angebot</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Über</a>
@@ -72,6 +72,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="selfservice.html">Self Service</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="contact.html">Kontakt<span class="sr-only">(current)</span></a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>
@@ -227,12 +230,16 @@
   <script>
     // Set the subject field based on the modal title
     document.addEventListener("DOMContentLoaded", function() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var subject = urlParams.get('subject');
-      if (subject) {
-        document.getElementById('subject').value = subject;
-      }
-    });
+    var urlParams = new URLSearchParams(window.location.search);
+    var subject = urlParams.get('subject');
+    var subjectField = document.getElementById('subject');
+    if (subject) {
+      subjectField.value = subject;
+      subjectField.readOnly = true;
+    } else {
+      subjectField.readOnly = false;
+    }
+  });
 
   </script>
 </body>
