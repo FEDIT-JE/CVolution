@@ -1080,4 +1080,26 @@ a:focus {
   margin-right: 25%;
 }
 
+.modal-content > p{
+  text-align: left;
+}
+
+.service > p{
+  text-align: left;
+}
+
+.service-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+.service .detail-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=style.css.map */
