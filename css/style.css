@@ -777,7 +777,7 @@ a:focus {
 .info_section {
   background-color: #1f4878;
   color: #ffffff;
-  padding-left: 17%;
+  padding: 3%;
 }
 
 .info_section h4 {
